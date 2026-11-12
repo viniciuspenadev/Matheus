@@ -1,0 +1,31 @@
+# Configuração para o Supabase CLI (opcional): `supabase link` + `supabase db push`
+# aplicam as migrações de supabase/migrations no projeto hospedado.
+# Também é possível colar os arquivos SQL, em ordem, no SQL Editor do painel.
+project_id = "studyflow-ai"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 17
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000"]
+jwt_expiry = 3600
+# Cadastro público desativado: a conta é criada por `npm run setup:user`.
+enable_signup = false
+
+[auth.email]
+enable_signup = false
+enable_confirmations = false
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"

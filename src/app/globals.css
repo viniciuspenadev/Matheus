@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/*
+ * Identidade visual do StudyFlow AI
+ * - fundo muito claro, cartões brancos discretos
+ * - azul-marinho (navy) e azul royal como cores principais; azul suave nos detalhes
+ * - tipografia Inter (servida localmente via @fontsource-variable/inter)
+ */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-navy-950: #061229;
+  --color-navy-900: #0b1f3a;
+  --color-navy-800: #12305a;
+  --color-navy-700: #1b3f73;
+
+  --color-royal-800: #1a3a9c;
+  --color-royal-700: #1f46c2;
+  --color-royal-600: #2554e0;
+  --color-royal-500: #3d6cf2;
+  --color-royal-200: #c9d7ff;
+  --color-royal-100: #e3ebff;
+  --color-royal-50: #f2f6ff;
+
+  --color-surface: #ffffff;
+  --color-canvas: #f6f8fc;
+}
+
+:root {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-slate-900);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Foco visível e consistente para navegação por teclado. */
+:focus-visible {
+  outline: 2px solid var(--color-royal-600);
+  outline-offset: 2px;
+}
+
+/* Área segura do iPhone (notch / barra inferior). */
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Texto longo de transcrição: legível e com quebra correta. */
+.transcript-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.75;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .print-full {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}

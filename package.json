@@ -1,0 +1,49 @@
+{
+  "name": "studyflow-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StudyFlow AI — assistente acadêmico pessoal que transforma aulas gravadas em materiais de estudo.",
+  "engines": {
+    "node": ">=20.12.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest --project unit",
+    "test:db": "node scripts/test-db.mjs",
+    "test:e2e": "node scripts/e2e/run.mjs",
+    "test:all": "npm run lint && npm run typecheck && npm run test && npm run test:db",
+    "setup:user": "node scripts/create-user.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "db:types": "node scripts/test-db.mjs --update-types"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.119.0",
+    "lucide-react": "1.72.0",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^22",
+    "@types/pg": "^8.15.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "pg": "^8.16.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5",
+    "vitest": "5.1.0"
+  }
+}
